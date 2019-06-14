@@ -1,0 +1,3 @@
+SHIFT+F12 - Go back to previous lines of code in debugger. Or skip lines without executing them. Anything between current cursor position and where selectedwill be skipped over
+
+Ctrl+shift+F5 in SE80 or any other code browser will bring up the data dictionary column on the left

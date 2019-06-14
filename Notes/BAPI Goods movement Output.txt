@@ -1,0 +1,22 @@
+The following must happen in order to generate output in BAPI_GOODSMVT_CREATE and to have that output match what standard t-codes, such as MB01 or MIGO, have.
+
+First, config must be set up.  I'm not sure exactly what all config is required, however, I do know that this must be set up:
+
+    T-Code OMBR
+
+    Inline image 1(sorry but it was missing from my evernote... no idea what OMBR looks like)
+
+    The print version must be applied to the applicable T-Code.
+
+    Note, the t-code that is set up in config must match the GOODSMVT_CODE passed into the BAPI.
+
+Next, you must pass in the username of the current user in the goods movement header information in field PR_UNAME, such as SY-UNAME.  Structure for this is BAPI2017_GM_HEAD_01.
+
+Now when the BAPI is called, it will look up the user parameter 'NDR' in table USR05, if this is set to 'X', it will set XNAPR flag to 'X' and the proper output is generated.  This means that the following needs to happen in your program to ensure the output is generated:
+
+    Call FM CACS_GET_USER_PARAMETER passing I_UNAME = SY-UNAME, I_PARID = 'NDR'.
+        If you get a value back, store that value.  If you get an error in the FM, store a space.  You must store the user's existing value for NDR (if they have one).
+    Next, call FM CACS_SET_USER_PARAMETER passing I_UNAME = SY-UNAME, I_PARID = 'NDR' and I_VALUE = 'X'.
+    Call the following to allow for the value to be updated in the database: WAIT UP TO 3 SECONDS.
+    Now, call BAPI_GOODSMVT_CREATE.
+    After the BAPI call, whether success or failure, update the user parameter NDR back to what its original value was before it was set manually to 'X'.

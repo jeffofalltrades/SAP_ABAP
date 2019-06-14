@@ -1,0 +1,33 @@
+Is this really the best way to determine if the transaction is in display mode versus create/change? 
+IF SY-TCODE = 'VA03'.
+
+The beverage module has some code that looks like this:
+CASE SCREEN-GROUP1.
+WHEN 'JU1'. "Felder 'Container erzeugen? Ja'
+IF T180-TRTYP = CHARA OR "Anzeigen
+T180-TRTYP = CHARH. "Anlegen
+"Felder 'Container erzeugen? Ja' erscheinen:
+SCREEN-ACTIVE = 0.
+ELSE. "trtyp = 'V' bedeutet Ändern
+SCREEN-ACTIVE = 1.
+ENDIF.
+ENDCASE.
+
+I think we are supposed to use the T180-TRTYP = 'A' to indicate display mode.  I was searching for this when I found your wiki.  The wiki is really helpful and well organized.  Just wondering if anyone has opinions on the use of T180-TRTYP?
+
+These are the possible values:
+ 
+
+
+* Masked
+A Display
+B Edit
+C Display from archive
+E Single-item planning
+H Add
+V Change
+X Initial transaction
+S Standard parameter: normal mode
+U Convert indiv. planned order
+L Delete
+

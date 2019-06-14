@@ -1,0 +1,7 @@
+RF Programming - Overriding SAP function(F1, F2, F3,F4, F5 etc) keys
+
+Following are the steps to override the function keys for SAP RF Programming
+
+    Go to GUI Status -> Utilities(Menu Options) -> F Key Consistency -> Define the Function Code for the Function Key
+    Go to GUI Status -> Expand the Function Keys -> Click on the Function Code in the Standard Toolbar-> Extras(Menu Options) -> Function Active <-> Inactive (Deactivate the SAP standard functionality. Repeat for all those function keys which you want to deactivate)
+    Go to GUI Status -> Expand the Function Keys -> Click on the Function Code in the Standard Toolbar-> Extras(Menu Options) -> Active functions in current status -> Select all the function codes for which you want to override the standard  functionality

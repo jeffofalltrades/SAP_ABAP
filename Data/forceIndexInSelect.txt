@@ -1,0 +1,28 @@
+SELECT paledger vrgar perio gjahr perde
+             kaufn kdpos vvr10 vvr11 vvr20 vvr21
+        BYPASSING BUFFER
+         INTO CORRESPONDING FIELDS OF TABLE it_ce1crl1
+        FROM ce1crl1
+        FOR ALL ENTRIES IN it_vbap2
+        WHERE paledger = '02'
+        AND vrgar = 'F'
+        AND perio <= l_perio
+        AND kaufn = it_vbap2-vbeln
+        AND kdpos = it_vbap2-posnr
+*        %_HINTS MSSQLNT 'TABLE &TABLE& ABINDEX(Z01)'.
+        %_HINTS MSSQLNT 'TABLE &TABLE& ABINDEX(Z01)'
+                MSSQLNT 'TABLE &TABLE& FASTFIRSTROW'.     
+
+
+
+  SELECT MAX( kkop~augbd )
+  INTO it_gen_docs-augbd
+  FROM ( fkkvkp AS vkp INNER JOIN dfkkop AS kkop
+     ON vkpvkont = kkopvkont ) INNER JOIN dfkkko AS kkko
+     ON kkopaugbl = kkkoopbel
+  WHERE vkp~exvko = ti_cuentas-exvko
+        AND kkop~bukrs = p_bukrs
+        AND kkop~blart IN r_blart
+        AND kkop~augst = '9'
+        AND kkko~blart IN r_blartd
+%_HINTS ORACLE 'INDEX("DFKKOP" "DFKKOP~Z07")'.

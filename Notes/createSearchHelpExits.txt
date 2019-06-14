@@ -1,0 +1,45 @@
+In order to modify/create a search help, you first need to know which search help needs to be modified.
+
+You can see this by pressing F1 on that field, then click on the technical information button(hammer and wrench).
+There should be a search help field that has the name of the search help you need.
+If it does not display, then you will need to debug through looking for the variable shlp_curr in the code block
+My instance was in program SAPLSDSD FORM CALL_SHLP_EXIT, I am unsure if this is the case for all shearch helps
+
+  CALL FUNCTION fuba
+    TABLES
+      shlp_tab    = shlp_tab
+      record_tab  = record_tab
+    CHANGING
+      shlp        = shlp_curr
+      callcontrol = callcontrol
+    EXCEPTIONS
+      OTHERS      = 1.
+shlp_curr-shlpname will have the information you need.
+*this way will give you a exit specific instance, if you need to modify a lot of search exits using a similar field, finding the main search help my be more useful. To help determine this use the where used list (only searching through search helps) in SE11, see next step, and find which of those has most if not all of the exits you need.
+
+Take the search help name and use SE11 to find the information you need.
+
+If there is already a search help exit, then you will only need to modify the existing FM using an enhancement. If there is not an existing you will need to create one in SE37. You will need a key to modify the search help object if this is the case. 
+
+If you are creating one then the import, export, changing, and tables tabs will need to have at least these fields:
+Import, and export have nothing.
+Changing: SHLP        TYPE SHLP_DESCR
+          CALLCONTROL TYPE DDSHF4CTRL
+Tables:   SHLP_TAB    LIKE SHLP_DESCT
+          RECORD_TAB  LIKE SEAHLPRES
+
+For the actual code, this must be included.
+It tells that the this FM will need to be called later.
+
+  IF callcontrol-step EQ 'SELONE'"you have to use this step
+
+    LOOP AT shlp_tab.
+      shlp_tab-intdescr-selmexit = YourFM_Name."tell the system what FM to call later
+      MODIFY shlp_tab.
+    ENDLOOP.
+  ENDIF.
+
+After this you use the callcontrol-step to determine when you want to execute your code.
+PRESEL is just before the dialog box appears. Good for customizing the fields for selection.
+SELECT is after the dialog box, but before data selection. Good for limiting what data the user sees.
+DISP   is just before the results display. good for removing certain fields from being displayed.

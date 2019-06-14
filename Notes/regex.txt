@@ -1,0 +1,89 @@
+Special Characters in Regular Expressions
+
+The following tables summarize the special characters in regular expressions:
+Escape character
+Special character	Meaning
+\	Escape character for special characters
+
+Special character for single character strings
+Special character	Meaning
+.	Placeholder for any single character
+\C	Placeholder for any single character
+\d	Placeholder for any single digit
+\D	Placeholder for any character other than a digit
+\l	Placeholder for any lower-case letter
+\L	Placeholder for any character other than a lower-case letter
+\s	Placeholder for a blank character
+\S	Placeholder for any character other than a blank character
+\u	Placeholder for any upper-case letter
+\U	Placeholder for any character other than an upper-case letter
+\w	Placeholder for any alphanumeric character including _
+\W	Placeholder for any non-alphanumeric character except for _
+[ ]	Definition of a value set for single characters
+[^ ]	Negation of a value set for single characters
+[ - ]	Definition of a range in a value set for single characters
+[ [:alnum:] ]	Description of all alphanumeric characters in a value set
+[ [:alpha:] ]	Description of all letters in a value set
+[ [:blank:] ]	Description for blank characters and horizontal tabulators in a value set
+[ [:cntrl:] ]	Description of all control characters in a value set
+[ [:digit:] ]	Description of all digits in a value set
+[ [:graph:] ]	Description of all graphic special characters in a value set
+[ [:lower:] ]	Description of all lower-case letters in a value set
+[ [:print:] ]	Description of all displayable characters in a value set
+[ [:punct:] ]	Description of all punctuation characters in a value set
+[ [:space:] ]	Description of all blank characters, tabulators, and carriage feeds in a value set
+[ [:unicode:] ]	Description of all Unicode characters in a value set with a code larger than 255 (HANDY FOR FINDING 
+[ [:upper:] ]	Description of all upper-case letters in a value set
+[ [:word:] ]	Description of all alphanumeric characters in a value set, including _
+[ [:xdigit:] ]	Description of all hexadecimal digits in a value set
+\a \f \n \r \t \v	Diverse platform-specific control characters
+[..]	Reserved for later enhancements
+[==]	Reserved for later enhancements
+
+→ More
+Special characters for character string patterns
+Special character	Meaning
+{n}	Concatenation of n single characters
+{n,m}	Concatenation of at least n and a maximum of m single characters
+{n,m}?	Reserved for later enhancements
+?	One or no single characters
+*	Concatenation of any number of single characters including 'no characters'
+*?	Reserved for later enhancements
++	Concatenation of any number of single characters excluding 'no characters'
++?	Reserved for later enhancements
+|	Linking of two alternative expressions
+( )	Definition of subgroups with registration
+ 
+(?: )	Definition of subgroups without registration
+\1, \2, \3 ...	Placeholder for the register of subgroups
+\Q ... \E	Definition of a string of literal characters
+(? ... )	Reserved for later enhancements
+
+→ More
+Special characters for search strings
+Special character	Meaning
+^	Anchor character for the start of a line
+\A	Anchor character for the start of a character string
+$	Anchor character for the end of a line
+\Z	Anchor character for the end of a character string
+\<	Start of a word
+\>	End of a word
+\b	Start or end of a word
+\B	Space between characters within a word
+(?= )	Preview condition
+(?! )	Negated preview condition
+
+→ More
+Special characters for replacement texts
+Special character	Meaning
+$0, $&	Placeholder for the whole found location
+$1, $2, $3...	Placeholder for the register of subgroups
+$`	Placeholder for the text before the found location
+$'	Placeholder for the text after the found location
+
+→ More
+
+
+
+
+

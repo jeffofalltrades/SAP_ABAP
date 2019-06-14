@@ -1,0 +1,16 @@
+Dev config:
+WE30 - Creating basic type (needed for making competely new type)
+WE31 - Creating custom segment (needed for extending existing types or making segments for new types)
+WE81 Create message type name
+WE82 - Assign message type to basic type (ties we30 and we81 data)
+WE57 - Assign FM to message types, and basic type, and any extensions)
+BD51 - Register custom FM
+
+Functional Config:
+WE20 - Assign partners to the message type
+WE42 - Create custom process code
+
+Testing: 
+WE05 - IDOC display
+WE19 - Test IDOC's (lets you enter in an existing idoc and reprocess with new idoc number)
+

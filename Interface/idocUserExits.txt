@@ -1,0 +1,1329 @@
+Additionally: 
+
+MODSAP table contains the link between enhancement name for CMOD and function module called for customer-functions
+
+MODACT table links the enhancement name to any implemented projects (SMOD)
+
+
+
+
+
+
+
+
+
+
+Userxits allow us to add our own functionality to SAP standard program
+
+without modifying it . These are implemented in the form of subroutines and hence are also known as FORM EXITs. The userexits are generally collected in includes and attached to the standard program by the SAP.
+
+ 
+
+Types of User exits
+
+1. Menu Exits
+
+2.Function exits
+
+3.Table exits
+
+4.Screen exits
+
+5.Keyword exits
+
+6.Field exits.
+
+ 
+
+ 
+
+also refer to the links below.. can get more info on user exits
+
+ 
+
+list of user exits
+
+http://www.planetsap.com/userexit_main_page.htm
+
+ 
+
+can also get the list of user exits thru..
+
+Tcode: CMOD -> Utilities -> SAP Enhancements -> F8 Execute
+
+ 
+
+User Exits Notes:
+
+ 
+
+http://www.sap-img.com/abap/a-short-tutorial-on-user-exits.htm
+
+http://www.sap-img.com/abap/what-is-user-exits.htm
+
+ 
+
+http://help.sap.com/saphelp_nw04/helpdata/en/81/8c5738ee806b0ee10000009b38f889/content.htm
+
+ 
+
+http://help.sap.com/saphelp_nw04/helpdata/en/bf/ec07a25db911d295ae0000e82de14a/content.htm
+
+ 
+
+below are some of the useful invound and outbound userexits
+
+ 
+
+<b>IDoc Inbound User Exits</b>
+
+1.     ACC_BILLING
+
+Accounting: Post invoice (OAG: LOAD RECEIVABLE)
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+2.     ACC_EMPLOYEE_EXP
+
+FI/CO: HR posting GL (AcctngEmplyeeExenses)
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+3.     ACC_EMPLOYEE_PAY
+
+FI/CO: HR posting AP (AcctngEmplyeePaybles)
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+4.     ACC_EMPLOYEE_REC
+
+FI/CO: HR posting AR (AcctngEmplyeeRcvbles)
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+5.     ACC_GL_POSTING
+
+Accounting: General G/L account posting
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+6.     ACC_GOODS_MOVEMENT
+
+Accounting: Post goods movement (OAG: POST JOURNAL)
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+7.     ACC_INVOICE_RECEIPT
+
+Accounting: Post invoice receipt (OAG: LOAD PAYABLE)
+
+•     ACBAPI01 EXIT_SAPLACC4_001 Accounting: Customer enhancement to BAPI interfaces
+
+8.     ACLPAY Accounting: Inbound invoice
+
+•     ACCID001 EXIT_SAPLACC1_031 IDoc ACLPAY: Userexit for creditor in accounting document
+
+•     ACCID001 EXIT_SAPLACC1_032 IDoc ACLPAY: Userexit for GL posting in accounting document
+
+•     ACCID001 EXIT_SAPLACC1_033 IDoc ACLPAY: Userexit for taxes in accounting document
+
+9.     ACLREC
+
+Accounting: Billing document
+
+•     ACCID001 EXIT_SAPLACC1_011 IDoc ACLREC: Userexit for debitor in accounting document
+
+•     ACCID001 EXIT_SAPLACC1_012 IDoc ACLREC: Userexit for GL posting in accounting document
+
+•     ACCID001 EXIT_SAPLACC1_013 IDoc ACLREC: Userexit for taxes
+
+10.     ACPJMM
+
+Posting in accounting from materials management
+
+•     ACCID001 EXIT_SAPLACC1_021 IDoc ACPJOU: Userexit for GL posting in accounting document
+
+11.     ARTMAS
+
+Create and change of material master (Retail)
+
+•     MGV00003 EXIT_SAPL1001_003 Enhancement for article master: IDoc inbound
+
+12.     BLAOCH
+
+Purchasing contract change
+
+•     MM06E002 EXIT_SAPLEINN_001 Customer enhancements for Idocs: contracts
+
+•     MM06E002 EXIT_SAPLEINN_002 Customer enhancements for Idocs: contracts
+
+•     MM06E002 EXIT_SAPLEINN_003 Customer enhancements for Idocs: contracts
+
+13.     BLAORD
+
+Purchasing contracts
+
+•     MM06E002 EXIT_SAPLEINN_001 Customer enhancements for Idocs: contracts
+
+•     MM06E002 EXIT_SAPLEINN_002 Customer enhancements for Idocs: contracts
+
+•     MM06E002 EXIT_SAPLEINN_003 Customer enhancements for Idocs: contracts
+
+ 
+
+14.     BLAREL
+
+Release order documentation for distributed contracts
+
+•     MM06E001 EXIT_SAPLEINM_004 Customer enhancements for release documentation inbound
+
+15.     COND_A
+
+Conditions: master data for price determination
+
+•     VKOI0001 EXIT_SAPLVKOI_001 Interchange of Conditions: Inbound Processing Modifications E1KOMG Segment
+
+•     VKOI0001 EXIT_SAPLVKOI_002 Interchange of Conditions: Inbound Processing Customer Segments
+
+16.     CREMAS
+
+Distribute vendor master
+
+•     VSV00001 EXIT_SAPLKD02_001 Inbound: Read and process vendor segments
+
+17.     DEBMAS
+
+Customer master
+
+•     VSV00001 EXIT_SAPLVV02_001 Inbound: Read and update additional customer master segments
+
+18.     DELINS
+
+Delivery schedule/JIT schedule
+
+•     VED40001 EXIT_SAPLVED4_001 Modify Warnings in Table XVBFS
+
+•     VED40001 EXIT_SAPLVED4_002 Copying Data to Screens for Incoming EDI Docs
+
+•     VED40001 EXIT_SAPLVED4_003 Customer-Specific Changes in the Workflow Parameters
+
+•     VED40001 EXIT_SAPLVED4_004 Determination of mail receiver during inbound processing
+
+19.     DESADV
+
+Delivery: Shipping notification
+
+•     LMELA010 EXIT_SAPLEINM_010 Customer enhancement shipping notification inbound: line item
+
+•     MM06E001 EXIT_SAPLEINM_006 Customer enhancements for shipping notification inbound
+
+•     V55K0001 EXIT_SAPLV55K_001 Delivery (inbound): Take data
+
+•     V55K0002 EXIT_SAPLV55K_002 Delivery (inbound): Prepare processing
+
+•     V55K0003 EXIT_SAPLV55K_003 Delivery (inbound): Evaluate result
+
+•     V55K0011 EXIT_SAPLV55K_011 Shipping notification (inbound): Take data
+
+•     V55K0012 EXIT_SAPLV55K_012 Shipping notification (inbound): Prepare processing
+
+•     V55K0013 EXIT_SAPLV55K_013 Shipping notification (inbound): Evaluate result
+
+20.     DOCMAS
+
+Master document
+
+•     CVDS0001 EXIT_SAPLCVALE_001 Userexit for ALEDVS (DOCMAS inbound)
+
+21.     DOLMAS
+
+Document-object links
+
+•     CVDS0001 EXIT_SAPLCVALE_003 Userexit for ALEDVS (DOLMAS inbound)
+
+22.     EDLNOT
+
+EDL delivery notes
+
+•     VED40001 EXIT_SAPLVED4_001 Modify Warnings in Table XVBFS
+
+•     VED40001 EXIT_SAPLVED4_002 Copying Data to screens for Incoming EDI Docs
+
+•     VED40001 EXIT_SAPLVED4_003 Customer-Specific Changes in the Workflow Parameters
+
+•     VED40001 EXIT_SAPLVED4_004 Determination of mail receiver during inbound processing
+
+23.     FIDCC1
+
+Send entire FI documents (user exit 003/4)
+
+•     F050S001 EXIT_SAPLF050_002 IDoc inbound: read user-defined IDoc segment
+
+•     F050S002 EXIT_SAPLF050_004 FIDCC1 IDoc inbound: Change IDoc / do not process
+
+•     F050S005 EXIT_SAPLF050_008 IDoc inbound: change fields in ACC structures (FI document)
+
+•     F050S005 EXIT_SAPLF050_009 IDoc inbound: change fields in parked documents
+
+24.     FIDCC2
+
+Send entire FI documents (user exit 005/6)
+
+•     F050S001 EXIT_SAPLF050_002 IDoc inbound: read user-defined IDoc segment
+
+•     F050S003 EXIT_SAPLF050_006 FIDCC2 IDoc inbound: Change IDoc / do not process
+
+•     F050S005 EXIT_SAPLF050_008 IDoc inbound: change fields in ACC structures (FI document)
+
+•     F050S005 EXIT_SAPLF050_009 IDoc inbound: change fields in parked documents
+
+25.     FIDCMT
+
+Sending single items for FI-GL
+
+•     F050S001 EXIT_SAPLF050_002 IDoc inbound: read user-defined IDoc segment
+
+•     F050S005 EXIT_SAPLF050_008 IDoc inbound: change fields in ACC structures (FI document)
+
+26.     FINSTA
+
+Bank Statement
+
+•     FEDI0005 EXIT_SAPLIEDP_201 FI-EDI: inbound - bank statement/ Lockbox - Final processing
+
+•     FEDI0005 EXIT_SAPLIEDP_202 FI-EDI: inbound - bank statement/ Lockbox - Processing of segments
+
+27.     FIROLL
+
+General ledger rollup for FI-GL (delta f. line items FIDCMT)
+
+•     F050S001 EXIT_SAPLF050_002 IDoc inbound: read user-defined IDoc segment
+
+28.     GSVERF
+
+Cred. memo procedure
+
+•     VED50001 EXIT_SAPLVED5_001 User Exit for Condition Value Tolerances in the Self- Billing Procedure
+
+•     VED50001 EXIT_SAPLVED5_005 Customer-Specific Changes in Workflow Parameters
+
+•     VED50001 EXIT_SAPLVED5_006 Copying Data to Screens for Incoming EDI Docs
+
+29.     HRMD_A
+
+HR: Master data and organizational data (appl. system)
+
+•     RHALE001 EXIT_SAPLRHA0_002 HR-CA: ALE inbound processing: Export parameter
+
+•     RHALE001 EXIT_SAPLRHAL_002 HR-CA: ALE inbound processing: Change info type data
+
+•     RHALE001 EXIT_SAPLRHAL_004 HR-CA: ALE inbound processing: conversion segment/ info type
+
+30.     INFREC
+
+Purchasing info record
+
+•     MMAL0004 EXIT_SAPLMEAI_004 ALE source list distribution: inbound processing userdefined data
+
+•     MMAL0004 EXIT_SAPLMEAI_003 ALE purchasing info record distribution: inbound processing segments
+
+31.     INVOIC
+
+Invoice / Billing document
+
+•     FEDI0001 EXIT_SAPLIEDI_001 FI-EDI: Invoice receipt - Determine G/L account per invoice line
+
+•     FEDI0001 EXIT_SAPLIEDI_002 FI-EDI: Invoice receipt - Determine add. acct assignm. per line item
+
+•     FEDI0001 EXIT_SAPLIEDI_003 FI-EDI: Invoice receipt - Fill the screen field 'Allocation'
+
+•     FEDI0001 EXIT_SAPLIEDI_004 FI-EDI: Invoice receipt - Determine the segment text
+
+•     FEDI0001 EXIT_SAPLIEDI_005 FI-EDI: Invoice receipt - Determine the name of the BDC session
+
+•     FEDI0001 EXIT_SAPLIEDI_011 MM-EDI: Invoice receipt - Determine purchase order item
+
+•     FEDI0001 EXIT_SAPLIEDI_101 FI-EDI: Invoice receipt INVOIC01 - additional assignment
+
+•     FEDI0001 EXIT_SAPLIEDI_102 FI-EDI: Invoice receipt INVOIC01 - add data
+
+•     FEDI0001 EXIT_SAPLIEDI_111 MM-EDI: Invoice receipt INVOIC01 - additional assignment
+
+•     FEDI0001 EXIT_SAPLIEDI_112 MM-EDI: Invoice receipt INVOIC01 - add data
+
+•     MRMH0002 EXIT_SAPLMRMH_011 Logistics Invoice Verification:inboud EDI message, company code
+
+•     MRMH0002 EXIT_SAPLMRMH_012 Logistics Invoice Verification:inboud EDI message, control flags
+
+•     MRMH0002 EXIT_SAPLMRMH_013 Logistics Invoice Verification:inboud EDI message, assignment
+
+•     MRMH0002 EXIT_SAPLMRMH_014 Logistics Invoice Verification:inboud EDI message, segments
+
+•     MRMH0002 EXIT_SAPLMRMH_015 Logistics Invoice Verification:inbound EDI message, before posting
+
+32.     LIKOND
+
+Listing conditions
+
+•     WSOR0001 EXIT_SAPLWSOI_001 Enhancement for assortments: inbound IDoc
+
+33.     MATMAS
+
+Material Master
+
+•     MGV00001 EXIT_SAPLMV02_002 Enhancement for material master IDoc: Update
+
+ 
+
+34.     MRESCR
+
+Create reservation
+
+•     SAPLMEWB EXIT_SAPLMEWB_001 Customer exit for processing of reservations via BAPIs
+
+35.     ORDCHG
+
+Purchase order/order change
+
+•     MM06E001 EXIT_SAPLEINM_012 MM EDI ORDERS/ ORDCHG: enhancement configuration
+
+•     MM06E001 EXIT_SAPLEINM_013 MM EDI ORDERS/ ORDCHG: enhancement configuration
+
+•     VEDB0001 EXIT_SAPLVEDB_001 SD EDI incoming change orders: read additional data from IDoc
+
+•     VEDB0001 EXIT_SAPLVEDB_002 SD EDI incoming change orders: additional data for dynpros
+
+•     VEDB0001 EXIT_SAPLVEDB_003 SD EDI incoming change orders: further activities after calling
+
+•     VEDB0001 EXIT_SAPLVEDB_004 SD EDI incoming change orders: closing activities per
+
+•     VEDB0001 EXIT_SAPLVEDB_005 SD EDI incoming change orders: closing activities by order block
+
+•     VEDB0001 EXIT_SAPLVEDB_006 SD EDI incoming change orders: setting order type
+
+•     VEDB0001 EXIT_SAPLVEDB_007 SD EDI incoming change orders: additional checks of IDoc
+
+•     VEDB0001 EXIT_SAPLVEDB_008 SD EDI incoming change orders: error handling
+
+•     VEDB0001 EXIT_SAPLVEDB_009 SD EDI incoming change orders: additional checks of IDoc segments
+
+•     VEDB0001 EXIT_SAPLVEDB_010 SD EDI incoming change orders: manipulation of status ecords
+
+•     VEDB0001 EXIT_SAPLVEDB_012 SD EDI incoming change orders: change internal table
+
+36.     ORDERS
+
+Purchase order / order
+
+•     MCP20008 EXIT_SAPLMCP2_008 User exit: Processing of purchase order header
+
+•     MCP20008 EXIT_SAPLMCP2_009 User exit: Processing of purchase order item
+
+37.     ORDERS
+
+Purchase order / order
+
+•     MM06E001 EXIT_SAPLEINM_012 MM EDI ORDERS/ ORDCHG: enhancement configuration
+
+•     MM06E001 EXIT_SAPLEINM_013 MM EDI ORDERS/ ORDCHG: enhancement configuration
+
+•     VEDA0001 EXIT_SAPLVEDA_001 SD EDI incoming orders: read additional data from IDoc
+
+•     VEDA0001 EXIT_SAPLVEDA_002 SD EDI incoming orders: additional data for dynpros
+
+•     VEDA0001 EXIT_SAPLVEDA_003 SD EDI incoming orders: further activities after calling
+
+•     VEDA0001 EXIT_SAPLVEDA_004 SD EDI incoming orders: closing activities per order
+
+•     VEDA0001 EXIT_SAPLVEDA_005 SD EDI incoming orders: closing activities by order block
+
+•     VEDA0001 EXIT_SAPLVEDA_006 SD EDI incoming orders: setting order type
+
+•     VEDA0001 EXIT_SAPLVEDA_007 SD EDI incoming orders: number of ordering party
+
+•     VEDA0001 EXIT_SAPLVEDA_008 SD EDI incoming orders: error handling
+
+•     VEDA0001 EXIT_SAPLVEDA_009 SD EDI incoming orders: additional checks of IDoc segments
+
+•     VEDA0001 EXIT_SAPLVEDA_010 SD EDI incoming orders: manipulation of status records
+
+•     VEDA0001 EXIT_SAPLVEDA_011 SD EDI incoming orders: change internal table
+
+•     WVFB0001 EXIT_SAPLWVFB_002 Customer exists for store order PO confirmationdata seg.
+
+38.     ORDRSP
+
+Purchase order / order confirmation
+
+•     MM06E001 EXIT_SAPLEINM_005 Customer enhancements for order confirmation inbound
+
+•     MM06E001 EXIT_SAPLEINM_007 Customer enhancements inbound confirmation: reading
+
+•     MM06E001 EXIT_SAPLEINM_008 Customer enhancements inbound confirmation: final
+
+•     WVMI0001 EXIT_SAPLWVMI_003 ORDRSP VMI inbound, modification before creating purchase order
+
+39.     PORDCR
+
+Create purchase order
+
+•     SAPLMEWP EXIT_SAPLMEWP_002 Customer exit for processing of purchase orders via BAPIs
+
+40.     PREQCR
+
+Create purchase requisition
+
+•     SAPLMEWQ EXIT_SAPLMEWQ_001 Customer exit for processing of requisitions via BAPIs
+
+ 
+
+ 
+
+41.     PROACT
+
+Stock and sales data
+
+•     WVMI0001 EXIT_SAPLWVMI_002 IDoc PROACT inbound: prior to processing
+
+42.     REMADV
+
+Payment advice
+
+•     FEDI0002 EXIT_SAPLIEDP_101 FI-EDI: Incoming pmnt advice - Extended allocatn of IDOC -> applicatn data
+
+•     FEDI0002 EXIT_SAPLIEDP_102 FI-EDI: Incoming pmnt adivce - Closing allocatn of IDOC -> applicatn data
+
+43.     REQOTE
+
+Inquiry
+
+•     VEDQ0001 EXIT_SAPLVEDQ_001 SD EDI inbound inquiry: read additional data from IDoc
+
+•     VEDQ0001 EXIT_SAPLVEDQ_002 SD EDI inbound inquiry: additional data for dynpros
+
+•     VEDQ0001 EXIT_SAPLVEDQ_003 SD EDI inbound inquiry: further activities after calling
+
+•     VEDQ0001 EXIT_SAPLVEDQ_004 SD EDI inbound inquiry: closing activities per inquiry
+
+•     VEDQ0001 EXIT_SAPLVEDQ_005 SD EDI inbound inquiry: closing activities by inquiry block
+
+•     VEDQ0001 EXIT_SAPLVEDQ_006 SD EDI inbound inquiry: setting inquiry type
+
+•     VEDQ0001 EXIT_SAPLVEDQ_007 SD EDI inbound inquiry: number of sold-to party
+
+•     VEDQ0001 EXIT_SAPLVEDQ_008 SD EDI inbound inquiry: error handling
+
+•     VEDQ0001 EXIT_SAPLVEDQ_009 SD EDI inbound inquiry: additional checks of IDoc segments
+
+•     VEDQ0001 EXIT_SAPLVEDQ_010 SD EDI inbound inquiry: manipulation of status records
+
+•     VEDQ0001 EXIT_SAPLVEDQ_011 SD EDI inbound inquiry: change internal table
+
+44.     SBINV
+
+Credit memo procedure with invoice creation
+
+•     VED50001 EXIT_SAPLVED5_002 User Exit for messages in the Self-Billing Procedure SBINV
+
+•     VED50001 EXIT_SAPLVED5_003 User Exit for Tolerances in the Self- Billing Procedure SBINV
+
+•     VED50001 EXIT_SAPLVED5_004 Customer-Function for changing invoice data SBINV
+
+•     VED50001 EXIT_SAPLVED5_005 Customer-Specific Changes in Workflow Parameters
+
+•     VED50001 EXIT_SAPLVED5_006 Copying Data to Screens for Incoming EDI Docs
+
+45.     SDPACK
+
+Packing confirmation
+
+•     VMDE0001 EXIT_SAPLVMDE_001 Shipping Interface: Error Handling -  Inbound IDoc
+
+•     VMDE0004 EXIT_SAPLVMDE_004 Shipping Interface: Message SDPACK (Packing, Inbound)
+
+46.     SDPICK
+
+Picking confirmation
+
+•     VMDE0001 EXIT_SAPLVMDE_001 Shipping Interface: Error Handling -  Inbound IDoc
+
+•     VMDE0003 EXIT_SAPLVMDE_003 Shipping Interface: Message SDPICK (Picking, Receipt)
+
+47.     SHP_IBDLV_CONFIRM_DECENTRAL
+
+Confirmation (Inbound Delivery)
+
+•     V50B0001 EXIT_SAPLV50I_002 User exit for BAPI Verification of Inbound Deliveries
+
+48.     SHP_IBDLV_SAVE_REPLICA
+
+BAPI Function Module for Duplication of Outbound Deliveries
+
+•     V50B0001 EXIT_SAPLV50I_001 User exit for BAPI Duplication of Inbound Deliveries
+
+49.     SHP_OBDLV_CONFIRM_DECENTRAL
+
+Confirmation (Customer Delivery)
+
+•     V50B0001 EXIT_SAPLV50I_004 User exit for BAPI Verification of Outbound Deliveries
+
+50.     SHP_OBDLV_SAVE_REPLICA
+
+BAPI Function Module for Duplication of Outbound Deliveries
+
+•     V50B0001 EXIT_SAPLV50I_003 User exit for BAPI Duplication of Outbound Deliveries
+
+51.     SHPCON
+
+Delivery: Shipping confirmation
+
+•     V55K0001 EXIT_SAPLV55K_001 Delivery (inbound): Take data
+
+•     V55K0002 EXIT_SAPLV55K_002 Delivery (inbound): Prepare processing
+
+•     V55K0003 EXIT_SAPLV55K_003 Delivery (inbound): Evaluate result
+
+•     V55K0011 EXIT_SAPLV55K_011 Shipping notification (inbound): Take data
+
+•     V55K0012 EXIT_SAPLV55K_012 Shipping notification (inbound): Prepare processing
+
+•     V55K0013 EXIT_SAPLV55K_013 Shipping notification (inbound): Evaluate result
+
+52.     SHPMNT
+
+Shipping outbound
+
+•     V55K0020 EXIT_SAPLV55K_020 IDoc SHPMNT: Modification Control/ Data before processing
+
+•     V55K0021 EXIT_SAPLV55K_021 Processing of segments IDoc SHPMNT
+
+•     V55K0022 EXIT_SAPLV55K_022 Update of user defined tables for inbound IDoc SHPMNT
+
+53.     SRCLST
+
+Source List
+
+•     MMAL0002 EXIT_SAPLMEAI_001 ALE source list distribution: inbound processing segments
+
+•     MMAL0002 EXIT_SAPLMEAI_002 ALE source list distribution: inbound processing user defined data
+
+54.     SRVMAS
+
+Master data service master
+
+•     BASI0001 EXIT_SAPLBASI_001 Userexit IDoc inbound service master: segment
+
+•     BASI0001 EXIT_SAPLBASI_002 Userexit IDoc inbound service master: database
+
+55.     TPSSHT
+
+Shipping planning system: Transfer planned shipments
+
+•     V56I0010 EXIT_SAPLV56I_010 IDoc TPSSHT01: Input of planned shipments: Modification of IDoc segments
+
+•     V56I0010 EXIT_SAPLV56I_011 IDoc TPSSHT01: Input of planned shipments: modification of transport tab, processing
+
+•     V56I0010 EXIT_SAPLV56I_012 IDoc TPSSHT01: Input of planned shipments: update of own tables
+
+56.     WHSCON
+
+Delivery: Stock confirmation
+
+•     V55K0001 EXIT_SAPLV55K_001 Delivery (inbound): Take data
+
+•     V55K0002 EXIT_SAPLV55K_002 Delivery (inbound): Prepare processing
+
+•     V55K0003 EXIT_SAPLV55K_003 Delivery (inbound): Evaluate result
+
+•     V55K0011 EXIT_SAPLV55K_011 Shipping notification (inbound): Take data
+
+•     V55K0012 EXIT_SAPLV55K_012 Shipping notification (inbound): Prepare processing
+
+•     V55K0013 EXIT_SAPLV55K_013 Shipping notification (inbound): Evaluate result
+
+57.     WMBBIN
+
+Block Storage Bins
+
+•     MWMIDI01 EXIT_SAPLLIDI_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDI04 EXIT_SAPLLIDI_004 Customer enhancement for IDoc WMBBID01
+
+58.     WMCATO
+
+Reversal/Reversal request for transfer order
+
+•     MWMIDI01 EXIT_SAPLLIDI_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDI03 EXIT_SAPLLIDI_003 Customer enhancement for IDoc WMCAI01
+
+59.     WMINVE
+
+Inventory count input
+
+•     MWMIDO07 EXIT_SAPLLMDE_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDO09 EXIT_SAPLLMDE_003 Customer enhancement for message WMINVE
+
+•     MWMIDO07 EXIT_SAPLLMDE_001 Customer enhancement for error handling of inbound IDoc
+
+60.     WMMBXY
+
+IDoc Report goods movements in IM
+
+•     MWMIDO08 EXIT_SAPLLMDE_002 Customer enhancement for message WMMBXY (goods movement) inbound
+
+61.     WMSUMO
+
+Move storage unit
+
+•     MWMIDI01 EXIT_SAPLLIDI_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDI06 EXIT_SAPLLIDI_006 Customer enhancement for IDoc WMSUID01
+
+62.     WMTOCO
+
+Transfer order
+
+•     MWMIDI01 EXIT_SAPLLIDI_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDI02 EXIT_SAPLLIDI_002 Customer enhancement for IDoc WMTCID01
+
+63.     WMTORD
+
+Transfer order
+
+•     MWMIDO07 EXIT_SAPLLMDE_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDO10 EXIT_SAPLLMDE_004 Customer enhancement for message WMTORD (Create TO) inbound
+
+•     MWMIDO11 EXIT_SAPLLMDE_005 Customer enhancement for message WMTORD (Create TO) inbound
+
+64.     WMTREQ
+
+Create/Cancel transfer order
+
+•     MWMIDI01 EXIT_SAPLLIDI_001 Customer enhancement for error handling of inbound IDoc
+
+•     MWMIDI05 EXIT_SAPLLIDI_005 Customer enhancement for IDoc WMTRID01
+
+65.     WPUBON
+
+POS interface: Upload sales documents (compressed)
+
+•     WPUE0002 EXIT_SAPLWPUE_104 IDoc WPUBON01: prior to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_105 Check, whether transaction of IDoc WPUBON01 is compressable
+
+•     WPUE0002 EXIT_SAPLWPUE_106 IDoc WPUBON01: processing user segment
+
+•     WPUE0002 EXIT_SAPLWPUE_109 IDoc WPUBON01: after to inbound processing
+
+66.     WPUFIB
+
+POS interface: Upload Fin.Acc. interface SRS/POS
+
+•     WPUE0002 EXIT_SAPLWPUE_130 IDoc WPUFIB01: prior to update
+
+•     WPUE0002 EXIT_SAPLWPUE_131 IDoc WPUFIB01: processing user
+
+67.     WPUFIB
+
+POS interface: Upload Fin.Acc. interface SRS/POS
+
+•     WPUE0002 EXIT_SAPLWPUE_132 IDoc WPUFIB01: prior to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_139 IDoc WPUFIB01: after to inbound processing
+
+68.     WPUKSR
+
+POS upload cashier data
+
+•     WPUE0002 EXIT_SAPLWPUE_120 IDoc WPUKSR01: prior to update
+
+•     WPUE0002 EXIT_SAPLWPUE_122 IDoc WPUKSR01: processing user segment
+
+•     WPUE0002 EXIT_SAPLWPUE_123 IDoc WPUKSR01: prior to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_129 IDoc WPUKSR01: after to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_152 IDoc WPUTAB01: prior to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_159 IDoc WPUTAB01: after to inbound processing
+
+69.     WPUUMS
+
+POS interface: Upload sales data (compressed)
+
+•     WPUE0002 EXIT_SAPLWPUE_110 IDoc WPUUMS01: prior to update
+
+•     WPUE0002 EXIT_SAPLWPUE_112 IDoc WPUUMS01: prior to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_113 IDoc WPUUMS01: processing user segment
+
+•     WPUE0002 EXIT_SAPLWPUE_119 IDoc WPUUMS01: after to inbound processing
+
+70.     WPUWBW
+
+POS interface: Upload goods movements
+
+•     WPUE0002 EXIT_SAPLWPUE_140 IDoc WPUWBW01: prior to update
+
+•     WPUE0002 EXIT_SAPLWPUE_141 IDoc WPUWBW01: processing user segment
+
+•     WPUE0002 EXIT_SAPLWPUE_142 IDoc WPUWBW01: prior to inbound processing
+
+•     WPUE0002 EXIT_SAPLWPUE_149 IDoc WPUWBW01: after to inbound processing
+
+71.     WVINVE
+
+Store physical inventory / sales price revaluation
+
+•     WVFI0001 EXIT_SAPLWVFI_001 Inbound IDoc store phys. inv.: override Customizing
+
+•     WVFI0002 EXIT_SAPLWVFI_002 Inbound IDoc store phys. inv.: process customer segment
+
+ 
+
+<b>IDoc Outbound User Exits</b>
+
+72.     ACCONF
+
+Confirmation of IDoc processing from the application
+
+•     ACCID002 EXIT_SAPLACC2_040 IDOC ACCONF: Confirmation of processing in application
+
+73.     ACLPAY
+
+Accounting: Inbound invoice
+
+•     ACCID002 EXIT_SAPLACC2_030 IDoc ACLPAY: Userexit for header in accounting document (outbound)
+
+•     ACCID002 EXIT_SAPLACC2_031 IDoc ACLPAY: Userexit for creditor line (outbound) in accounting document
+
+•     ACCID002 EXIT_SAPLACC2_032 IDoc ACLPAY: Userexit for general line (outbound) in accounting document
+
+•     ACCID002 EXIT_SAPLACC2_033 IDoc ACLPAY: Userexit for tax line (outbound) in accounting document
+
+74.     ACPJMM
+
+Posting in accounting from materials management
+
+•     ACCID002 EXIT_SAPLACC2_020 IDoc ACPJOU: Userexit Userexit for GL posting header in accounting document
+
+•     ACCID002 EXIT_SAPLACC2_021 IDoc ACPJOU: Userexit Userexit for GL posting line in accounting document
+
+75.     ARTMAS
+
+Create and change of material master (Retail)
+
+•     MGV00003 EXIT_SAPLMV01_003 Enhancement for article master IDoc: Create
+
+76.     BLAORD
+
+Purchasing contracts
+
+•     MM06E001 EXIT_SAPLEINM_016 ALE distribution of contracts outbound enhancement for IDocs
+
+•     MM06E001 EXIT_SAPLEINM_017 ALE distribution of contracts outbound enhancement for IDocs
+
+77.     BLAREL
+
+Purchasing contracts
+
+•     MM06E001 EXIT_SAPLEINM_003 Customer enhancements of data segment for outbound release documentation
+
+78.     COND_A
+
+Conditions: master data for price determination
+
+•     VKOE0001 EXIT_SAPLVKOE_001 Condition Transmission: Derivation of Filter Object E1KOMG
+
+•     VKOE0001 EXIT_SAPLVKOE_002 Condition Transmission: Customer segments
+
+79.     CREMAS
+
+Distribute vendor master
+
+•     VSV00001 EXIT_SAPLKD01_001 Outbound: Create vendor segments
+
+80.     DEBMAS
+
+Customer master
+
+•     VSV00001 EXIT_SAPLVV01_001 Outbound: Create additional customer master segments
+
+81.     DELPKB
+
+KANBAN call
+
+•     MPKD0001 EXIT_SAPLMPKD_001 User exit for control record KANBAN, outbound
+
+•     MPKD0001 EXIT_SAPLMPKD_002 User exit for EDI
+
+82.     DIRDEB
+
+Preauthorized withdrawal
+
+•     FEDI0003 EXIT_SAPLIEDP_003 FI-EDI outgoing payments: Save PEXR segments (customer directory)
+
+83.     DOCMAS
+
+Master document
+
+•     CVDS0001 EXIT_SAPLCVALE_002 Userexit for ALEDVS (DOCMAS outbound)
+
+•     CVDS0001 EXIT_SAPLCVALE_005 Userexit for filter (ALE outbound)
+
+84.     DOLMAS
+
+Document-object links
+
+•     CVDS0001 EXIT_SAPLCVALE_004 Userexit for ALEDVS (DOLMAS outbound)
+
+•     CVDS0001 EXIT_SAPLCVALE_005 Userexit for filter (ALE outbound)
+
+85.     FIDCC1
+
+Send entire FI documents (user exit 003/4)
+
+•     F050S001 EXIT_SAPLF050_001 IDoc outbound: fill user-defined IDoc segment
+
+•     F050S002 EXIT_SAPLF050_003 FIDCC1 IDoc outbound: Change data / do not send
+
+•     F050S004 EXIT_SAPLF050_007 IDoc outbound: change complete IDoc / do not send
+
+86.     FIDCC2
+
+Send entire FI documents (user exit 005/6)
+
+•     F050S001 EXIT_SAPLF050_001 IDoc outbound: fill user-defined IDoc segment
+
+•     F050S003 EXIT_SAPLF050_005 FIDCC2 IDoc outbound: Change data / do not send
+
+•     F050S004 EXIT_SAPLF050_007 IDoc outbound: change complete IDoc / do not send
+
+•     F050S001 EXIT_SAPLF050_001 IDoc outbound: fill user-defined IDoc segment
+
+87.     FIDCMT
+
+Sending single items for FI-GL
+
+•     F050S004 EXIT_SAPLF050_007 IDoc outbound: change complete IDoc / do not send
+
+88.     FIPAYM
+
+Payment data
+
+•     FIPAYM01 EXIT_SAPLF11A_001 USER-EXIT: message type FIPAYM, header data, outbound
+
+•     FIPAYM01 EXIT_SAPLF11A_002 USER-EXIT: message type FIPAYM, reference data, outbound
+
+•     FIPAYM01 EXIT_SAPLF11A_003 USER-EXIT: message type FIPAYM, bank data, outbound
+
+•     FIPAYM01 EXIT_SAPLF11A_004 USER-EXIT: message type FIPAYM, GL data, outbound
+
+•     FIPAYM01 EXIT_SAPLF11A_005 USER-EXIT: message type FIPAYM, partner data, outbound
+
+89.     FIROLL
+
+General ledger rollup for FI-GL (delta f. line items FIDCMT)
+
+•     F050S001 EXIT_SAPLF050_001 IDoc outbound: fill user-defined IDoc segment
+
+90.     GSVERF
+
+Cred. memo procedure
+
+•     MRMN0001 EXIT_SAPLMRMN_001 Outbound IDoc for ERS/consignment settlement
+
+91.     HRMD_A
+
+HR: Master data and organizational data (appl. system)
+
+•     RHALE001 EXIT_SAPLRHA0_001 HR-CA: ALE outbound processing: Enhancement for receiver
+
+•     RHALE001 EXIT_SAPLRHAL_001 HR-CA: ALE outbound processing: Change IDoc
+
+•     RHALE001 EXIT_SAPLRHAL_003 HR-CA: ALE outbound processing: conversion info type / segment
+
+92.     INFREC
+
+Purchasing info record
+
+•     MMAL0003 EXIT_SAPLMEAO_002 ALE purchasing info record distribution: outbound processing
+
+93.     INVOIC
+
+Invoice / Billing document
+
+•     LVEDF001 EXIT_SAPLVEDF_001 User_Exit controll data IDoc_Output_Invoic
+
+•     LVEDF001 EXIT_SAPLVEDF_002 User_Exit customer enhancement of segments outbound invoice
+
+•     LVEDF001 EXIT_SAPLVEDF_003 User_Exit to avoid reading package data
+
+•     LVEDF001 EXIT_SAPLVEDF_004 EDI Invoice: customer enhancement for reading additional data
+
+94.     KANBAN
+
+KANBAN call
+
+•     MPKD0001 EXIT_SAPLMPKD_001 User exit for control record KANBAN, outbound
+
+•     MPKD0001 EXIT_SAPLMPKD_002 User exit for EDI
+
+95.     LIKOND
+
+Listing conditions
+
+•     WSOR0001 EXIT_SAPLWSOE_001 Enhancement for assortments: outbound IDoc
+
+96.     MATMAS
+
+Material Master
+
+•     MGV00001 EXIT_SAPLMV01_002 Enhancement for material master IDoc: Create
+
+97.     ORDCHG
+
+Purchase order/order change
+
+•     MM06E001 EXIT_SAPLEINM_001 Customer enhancements for control record: purchasing document, outbound
+
+•     MM06E001 EXIT_SAPLEINM_002 Customer enhancements to data segments, purchasing document, outbound
+
+•     MM06E001 EXIT_SAPLEINM_011 Final customer enhancement EDI purchase order outbound
+
+98.     ORDERS
+
+Purchase order / order
+
+•     MM06E001 EXIT_SAPLEINM_001 Customer enhancements for control record: purchasing document, outbound
+
+•     MM06E001 EXIT_SAPLEINM_002 Customer enhancements to data segments, purchasing document, outbound
+
+•     MM06E001 EXIT_SAPLEINM_011 Final customer enhancement EDI purchase order outbound
+
+99.     ORDRSP
+
+Purchase order / order confirmation
+
+•     MM06E001 EXIT_SAPLEINM_009 MM EDI ORDRSP: customer enhancements tolerances (quantities/ date/price)
+
+•     MM06E001 EXIT_SAPLEINM_014 MM EDI ORDRSP:enhancement price tolerances
+
+•     MM06E001 EXIT_SAPLEINM_015 MM EDI ORDRSP: enhancement change of vendor material
+
+•     SDEDI001 EXIT_SAPLVEDC_001 Customer enhancement for control record of order confirmation
+
+•     SDEDI001 EXIT_SAPLVEDC_002 Customer enhancement for data records of order confirmation
+
+•     SDEDI001 EXIT_SAPLVEDC_003 SD EDI ORDRSP: customer enhancement
+
+•     SDEDI001 EXIT_SAPLVEDC_004 SD EDI ORDRSP:customer enhancement for reading additional data
+
+•     SDEDI001 EXIT_SAPLVEDC_005 SD EDI ORDRSP: customer enhancement for configuration
+
+•     SDEDI001 EXIT_SAPLVEDC_006 SD EDI ORDRSP: customer enhancement for configuration structures
+
+•     SDEDI001 EXIT_SAPLVEDC_007 SD EDI ORDRSP: customer enhancement for header conditions
+
+•     SDEDI001 EXIT_SAPLVEDC_008 SD EDI ORDRSP: customer enhancement for item conditions
+
+•     WVFB0001 EXIT_SAPLWVFB_001 Customer exists for store order PO confirmation control seg.
+
+•     WVFB0001 EXIT_SAPLWVFB_003 Customer exists for store order PO confirmation data seg.
+
+100.     PAYEXT
+
+Extended payment order
+
+•     FEDI0003 EXIT_SAPLIEDP_002 FI-EDI outgoing payments: Save PEXR segments (external payments)
+
+•     FEDI0004 EXIT_SAPLIEDP_901 FI-EDI outgoing payments: New partner house bank
+
+•     FEDI0004 EXIT_SAPLIEDP_902 FI-EDI outgoing payments: End of IDoc payment (VBLNR)
+
+•     FEDI0004 EXIT_SAPLIEDP_903 FI-EDI outgoing payments: End of partner house bank
+
+101.     PICKSD
+
+Picking data confirmation to customer delivery
+
+•     VMDE0002 EXIT_SAPLVMDE_002 Shipping Interface: Message PICKSD (Picking, Outbound)
+
+102.     PRDCAT
+
+Product Catalog
+
+•     WPCI0001 EXIT_SAPLWPCI_001 User exit for Product cat. IDoc outbound
+
+103.     PRDPOS
+
+Product catalog item
+
+•     WPCI0001 EXIT_SAPLWPCI_001 User exit for Product cat. IDoc outbound
+
+104.     PRICAT
+
+Price list / catalog
+
+•     VPRE0001 EXIT_SAPLVPRE_001 PRICAT outbound processing (MAMT AUSP MAW1)
+
+•     VPRE0001 EXIT_SAPLVPRE_002 PRICAT outbound processing (control record)
+
+•     VPRE0001 EXIT_SAPLVPRE_003 PRICAT outbound processing (IDoc segments)
+
+105.     PROACT
+
+Stock and sales data
+
+•     WVMI0001 EXIT_SAPLWVMI_001 IDoc PROACT outbound: final action prior to sending
+
+106.     REMADV
+
+Payment advice
+
+•     FEDI0003 EXIT_SAPLIEDP_001 FI-EDI: Outgoing pmnt advice - Create extension of segments/ new segments
+
+107.     REQOTE
+
+Inquiry
+
+•     VEDE0001 EXIT_SAPLVEDE_001 Customer enhancement for control record of outbound quotation
+
+•     VEDE0001 EXIT_SAPLVEDE_003 SD EDI REQOTE: customer enhancement
+
+•     VEDE0001 EXIT_SAPLVEDE_002 Customer enhancement for data records of outbound quotation
+
+•     VEDE0001 EXIT_SAPLVEDE_004 SD EDI REQOTE: customer enhancement for reading additional data
+
+•     VEDE0001 EXIT_SAPLVEDE_005 SD EDI REQOTE: customer enhancement for configuration
+
+•     VEDE0001 EXIT_SAPLVEDE_006 SD EDI REQOTE: customer enhancement for configuration structures
+
+•     VEDE0001 EXIT_SAPLVEDE_007 SD EDI REQOTE: customer enhancement for header conditions
+
+•     VEDE0001 EXIT_SAPLVEDE_008 SD EDI REQOTE: customer enhancement for item conditions
+
+108.     SRCLST
+
+Source List
+
+•     MMAL0001 EXIT_SAPLMEAO_001 ALE source list distribution: outbound processing
+
+109.     SRVMAS
+
+Master data service master
+
+•     BASO0001 EXIT_SAPLBASO_001 Enhancement: service master, check standard service catalog
+
+•     BASO0001 EXIT_SAPLBASO_002 Userexit IDoc service master: receiver determination
+
+110.     SYPART
+
+Partner profiles
+
+•     SIDOC002 EXIT_SAPLEDI6_001 CA-EDI, Partner-IDoc: Exit after segment E1EDPP1
+
+•     SIDOC002 EXIT_SAPLEDI6_002 CA-EDI, Partner-IDoc: Exit after segment E1ADRM0
+
+•     SIDOC002 EXIT_SAPLEDI6_003 CA-EDI, Partner-IDoc: Final exit before sending
+
+•     SIDOC002 EXIT_SAPLEDI6_004 CA-EDI, Partner-IDoc: Exit after segment E1ADRP0
+
+•     SIDOC002 EXIT_SAPLEDI6_005 CA-EDI, Partner-IDoc: Exit after segment E1ADRE0
+
+•     SIDOC002 EXIT_SAPLEDI6_007 CA-EDI, Partner-IDoc: Exit after segment E1EDP13
+
+•     SIDOC002 EXIT_SAPLEDI6_008 CA-EDI, Partner-IDoc: Exit after segment E1EDP21
+
+111.     TPSDLS
+
+Shipping planning system: Transfer delivery
+
+•     V56I0001 EXIT_SAPLV56I_001 IDoc TPSDLS: Modification of delivery header group
+
+•     V56I0002 EXIT_SAPLV56I_002 IDoc TPSDLS: Modification of delivery item group
+
+•     V56I0003 EXIT_SAPLV56I_003 IDoc TPSDLS: Modification of package data group
+
+•     V56I0004 EXIT_SAPLV56I_004 IDoc TPSDLS: Modification of entire IDoc
+
+•     V56I0005 EXIT_SAPLV56I_005 IDoc TPSDLS: Modif. of delivery items relevant to shipment
+
+•     V56I0006 EXIT_SAPLV56I_006 IDOC TPSDLS: User-defined determ. for location substitution
+
+•     V56I0020 EXIT_SAPLV56I_020 IDoc control record modification in interface SD-TPS
+
+112.     WBBDLD
+
+Assortment list: Material data
+
+•     WBBE0001 EXIT_SAPLWBBI_001 Modification of replenishment list IDoc
+
+113.     WMCATO
+
+Reversal/Reversal request for transfer order
+
+•     MWMIDO02 EXIT_SAPLLIDO_002 Customer enhancement for IDoc WMCAID01
+
+114.     WMINVE
+
+Inventory count input
+
+•     MWMIDO04 EXIT_SAPLLIDO_004 Customer enhancement for IDoc WMIVID01
+
+115.     WMRREF
+
+Release reference number
+
+•     MWMIDO03 EXIT_SAPLLIDO_003 Customer enhancement for IDoc WMRRID01
+
+116.     WMTORD
+
+Transfer order
+
+•     MWMIDO01 EXIT_SAPLLIDO_001 Customer enhancement for IDoc WMTOID01
+
+117.     WP_EAN
+
+POS interface: Upload / Download EAN assignments
+
+•     WPDA0001 EXIT_SAPLWPDA_003 POS interface: Modification of IDoc data for EAN references
+
+118.     WP_PER
+
+POS interface: Upload / Download person data
+
+•     WPDA0001 EXIT_SAPLWPDA_008 POS interface: Modification of IDoc data for person related data
+
+•     WPDA0001 EXIT_SAPLWPDA_013 POS interface: Add. Change pt. Analysis for WP_PER
+
+119.     WP_PLU
+
+POS interface: Upload / Download material master
+
+•     WPDA0001 EXIT_SAPLWPDA_002 POS interface: Modification of IDoc data for material master
+
+•     WPDA0001 EXIT_SAPLWPDA_009 POS interface: Add. Change pt. Analysis for WP_PLU
+
+120.     WPDCUR
+
+POS interface: Download exchange rates
+
+•     WPDA0001 EXIT_SAPLWPDA_006 POS interface: Modification of IDoc data for exchange rates
+
+121.     WPDNAC
+
+POS interface: Download products
+
+•     WPDA0001 EXIT_SAPLWPDA_005 POS interface: Modification of IDoc data for follow-on items
+
+•     WPDA0001 EXIT_SAPLWPDA_011 POS interface: Add. Change pt. Analysis for WPDNAC
+
+122.     WPDSET
+
+POS interface: Download set assignments
+
+•     WPDA0001 EXIT_SAPLWPDA_004 POS interface: modification of IDoc data for set assignments
+
+123.     WPDSET
+
+POS interface: Download set assignments
+
+•     WPDA0001 EXIT_SAPLWPDA_010 POS interface: Add. Change pt. Analysis for WPDSET
+
+124.     WPDTAX
+
+POS interface: Download tax rates
+
+•     WPDA0001 EXIT_SAPLWPDA_007 POS interface: modification of IDoc data for taxes
+
+125.     WPDWGR
+
+POS interface: Download material group master
+
+•     WPDA0001 EXIT_SAPLWPDA_001 POS interface: Modification of IDoc data for material groups
+
+•     WPDA0001 EXIT_SAPLWPDA_012 POS interface: Add. Change pt. Analysis for WPDWGR
+
+126.     WPUBON
+
+POS interface: Upload sales documents (compressed)
+
+•     WPUE0002 EXIT_SAPLWPUE_102 IDoc WPUBON01: prior to update
+
+127.     WTADDI
+
+Additionals
+
+•     WTAD0001 EXIT_SAPLWTIP_001 Enhancements to Additionals IDoc
+
+128.     WTADDI_CVB1
+
+Additionals w/o 06
+
+•     WTAD0001 EXIT_SAPLWTIP_001 Enhancements to Additionals IDoc
+
+General IDoc User Exits
+
+•     ALE00001 EXIT_RBDPROSE_001 Old: exit for converting preproduction system to production
+
+•     ALE00001 EXIT_SAPLBD11_001 User exit for the IDOC version changer
+
+•     BDMO0001 EXIT_SAPLBDMO_001 Old: Enhancement to the ALE distribution reference model
+
+•     KKCD0001 EXIT_SAPFKCIM_001 SAP-EIS: User exit for data compression of sender records (used for IDoc conversion)
+
+•     KKCD0001 EXIT_SAPFKCIM_002 SAP-EIS: User exit for data summ. Of summarized records befo (used for IDoc conversion)
+
+ 
+
+ 
+
+===
+
+ 
+
+User exits for Pricing.
+
+1.•USEREXIT_PRICING_PREPARE_TKOMK (module pool SAPLV60A, program RV60AFZZ
+
+2.•USEREXIT_PRICING_PREPARE_TKOMP (module pool SAPLV60A, program RV60AFZZ)
+
+3.•USEREXIT_FIELD_MODIFICATION
+
+4.•USEREXIT_FIELD_MODIFIC_KZWI
+
+5.•USEREXIT_FIELD_MODIFIC_KOPF
+
+ 
+
+User exits for Sales order
+
+1•USEREXIT_DELETE_DOCUMENT
+
+2•USEREXIT_FIELD_MODIFICATION
+
+3.•USEREXIT_MOVE_FIELD_TO_VBAK
+
+4.•USEREXIT_NUMBER_RANGE
+
+5.•USEREXIT_SAVE_DOCUMENT
+
+ 
+
+User exits for billing
+
+1.•USEREXIT_ACCOUNT_PREP_KOMKCV (Module pool SAPLV60A, program RV60AFZZ)
+
+2.•USEREXIT_ACCOUNT_PREP_KOMPCV
+
+3•USEREXIT_NUMBER_RANGE_INV_DATE (Module pool SAPLV60A, program RV60AFZC)
+
+4•USEREXIT_PRINT_ITEM (Module pool SAPLV61A, program RV61AFZB
+
+5.USEREXIT_PRINT_HEAD (Modulpool SAPLV61A, Programm RV61AFZB)
+

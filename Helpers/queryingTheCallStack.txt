@@ -1,0 +1,30 @@
+(copied out of a stackoverflow question)
+
+You may try SYSTEM_CALLSTACK.
+
+DATA:
+   abap_callstack_line TYPE abap_callstack_line,
+   callstack TYPE  abap_callstack.
+
+
+  CALL FUNCTION 'SYSTEM_CALLSTACK'
+    EXPORTING
+      max_level          = 4
+    IMPORTING
+      callstack          = callstack.
+
+But in your case I would prefer an additional parameter and the calling place can fill this entry. I would not call the parameter called_by but something like behaviour or mode.
+share|improve this answer
+	
+answered Jul 16 at 9:07
+knut
+4,4181520
+ 	
+ 	
+Thx. that did it. Btw, with your explanation, do you mean that some data object called "behavior" be declared in the 'DATA' section, and some piece of logic be implemented? Cuz that's what i did. But if you meand something different (and you think it's really nice to explain :P ) please provide some more details. Anyway thx alot! – vlad-ardelean Jul 16 at 11:06
+ 	
+I have some problems to give a correct example, because I did not really understand, how you call what. What are the two ways to call your programm? Via submit and with transaction ZAVGTTA4? The system field SY-TCODE contains the actual transaction. If SY-TCODE = 'ZAVGTTA4', then your programm is called with transaction ZAVGTTA4. – knut Jul 16 at 20:38
+ 	
+I know it's already answered but I'm wondering what the value of variable SY-CPROG is too (that's calling program name). – Jorg Jul 17 at 7:18
+ 	
+There is also SY-REPID - the program name. I have no SAP-System available, so I can't check it, but I thinkSY-REPID is the actual report (called by SA38 or direct per transaction). If you make make submits, SY-CPROG is the report "one level lower", SY-REPID is the first report. – knut Jul 17 at 9:55

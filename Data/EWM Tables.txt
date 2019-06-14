@@ -1,0 +1,65 @@
+SAP EWM Tables
+
+
+Function	Table	Description
+ 	 	 
+Wave	/SCWM/WAVEHDR	Wave – Header Information
+ 	/SCWM/WAVEITM	Wave Item
+ 	 	 
+ODO	/SCDL/DB_PROCH_O	Outbound Delivery Order Header
+ 	/SCDL/DB_PROCI_O	Outbound Delivery Order Item
+OD	/SCDL/DB_DLVH_O	Outbound Delivery Header
+ 	/SCDL/DB_DLVI_O	Outbound Delivery Item
+ 	 	 
+ID	/SCDL/DB_PROCH_I	Inbound Delivery: Header
+ 	/SCDL/DB_PROCI_I	Inbound Delivery Item
+ 	 	 
+Reference	/SCDL/DB_REFDOC	Reference
+ 	/SCDL/DB_REQH	Header Inbound Delivery Notification / Outbound Delivery Request
+ 	/SCDL/DB_REQI	Item Inbound Delivery Notification / Outbound Delivery Request
+ 	 	 
+Status	/SCDL/DB_STATUS	Status
+ 	/SCDL/V_STATUS	Generated Table for View /SCDL/V_STATUS
+ 	 	 
+HU	/SCWM/HUHDR	Handling unit header
+ 	/SCWM/HUSSTAT	Individual Status for Each Handling Unit
+ 	/SCWM/HUREF	Handling Unit Reference
+ 	/SCWM/HUSTOBJ	Information about HU Status Object
+ 	/SCWM/GMHUSTAT	HU Status of HUs from Goods Movement Log
+ 	TJ02T	 Status table
+WT	/SCWM/ORDIM_O	Warehouse Tasks Open
+ 	/SCWM/ORDIM_C	Warehouse Tasks Confirmed
+WO	/SCWM/WHO	Warehouse Order
+ 	 	 
+Quantity	/SCWM/AQUA	Available Quantity
+ 	/SCWM/QUAN	Quant Attributes
+ 	/LIME/NQUAN	LIME – Stock Quantities
+ 	/SCWM/STOCK_IW01	 Stock GUID from table
+BINS	/SCWM/LAGP	Storage Bins
+ 	/SCWM/LAGPS	Bins for Execution Areas and Activities
+ 	 	 
+PI	/LIME/PI_DOC_IT	Table of Physical Inventory Document Items
+ 	/LIME/PI_LOGHEAD	Log Table for Header Data of a Physical Inventory document
+ 	/LIME/PI_LOGITEM/LIME/PI_DOC_TB	Log Table for Item Data of a Physical Inventory documentQuantities for Physical Inventory Document
+ 	 	 
+TU	/SCWM/TU_DLV	Assignment of Deliveries and HUs to Transportation Units
+ 	/SCWM/TU_STATUS	Status of Transportation Unit Activities
+ 	 /SCWM/TUNIT	 TU &other GUID’s
+Masterdata	/SAPAPO/MATKEY	Product
+ 	/SAPAPO/MATMAP	Mapping Table for Products
+ 	/SAPAPO/MATLWH	Location Product for Location Warehouse
+ 	/SAPAPO/MATEXEC	Product: Execution Data
+ 	/SAPAPO/MATLWHST	Location Product for Location Whse and Subloc. Storage Type
+ 	/SAPAPO/MATTXT	Material Descriptions
+ 	 	 
+BP	ADRC	Addresses (Business Address Services)
+ 	/SCDL/DB_BPLOC	Partner/Location
+ 	BUT000	BP: General data I
+ 	BUT020	BP: Addresses
+
+ERP                            FRET                         Assignment of Procurement to Issue Docs in Mdse Distribution
+
+ERP                          /n/spe/cdmon           Transportation Cross-dock Monitor
+knowSCM EWM document object d...
+73.4 KB
+
